@@ -1,79 +1,92 @@
 <template>
-  <div id="nav-bar-container">
+  <div id="nav-bar-container" v-scroll="handleScroll">
     <div id="nav-bar" class="clearfix">
       <div id="nav-bar-left">
         <img src="../assets/logo.png" alt="">
         <ul>
           <li class="nav-li">
             新闻中心
-            <div>
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-triangle"></use>
-              </svg>
-              <ul>
-                <li>机构动态</li>
-                <li>媒体报道</li>
-                <li>病友故事</li>
-                <li>视频专区</li>
-              </ul>
+            <div class="subMenu-container">
+              <div class="subMenu">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-triangle"></use>
+                </svg>
+                <ul>
+                  <li>机构动态</li>
+                  <li>媒体报道</li>
+                  <li>病友故事</li>
+                  <li>视频专区</li>
+                </ul>
+              </div>
+
             </div>
           </li>
           <li class="nav-li">
             项目工作
-            <div>
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-triangle"></use>
-              </svg>
-              <ul>
-                <li>关怀服务</li>
-                <li>瓷爱助力</li>
-                <li>梦想学院</li>
-                <li>&nbsp;99 公益</li>
-              </ul>
+            <div class="subMenu-container">
+              <div class="subMenu">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-triangle"></use>
+                </svg>
+                <ul>
+                  <li>关怀服务</li>
+                  <li>瓷爱助力</li>
+                  <li>梦想学院</li>
+                  <li>&nbsp;99 公益</li>
+                </ul>
+              </div>
+
             </div>
           </li>
           <li class="nav-li">
             疾病简介
-            <div>
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-triangle"></use>
-              </svg>
-              <!--<svg class="icon" aria-hidden="true">-->
-              <!--<use xlink:href="#icon-triangle-copy"></use>-->
-              <!--</svg>-->
-              <ul>
-                <li>分型介绍</li>
-                <li>临床诊断</li>
-                <li>治疗方法</li>
-              </ul>
+            <div class="subMenu-container">
+              <div class="subMenu">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-triangle"></use>
+                </svg>
+                <!--<svg class="icon" aria-hidden="true">-->
+                <!--<use xlink:href="#icon-triangle-copy"></use>-->
+                <!--</svg>-->
+                <ul>
+                  <li>分型介绍</li>
+                  <li>临床诊断</li>
+                  <li>治疗方法</li>
+                </ul>
+              </div>
             </div>
           </li>
           <li class="nav-li">
             关于我们
-            <div>
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-triangle"></use>
-              </svg>
-              <ul>
-                <li>机构简介</li>
-                <li>信息公开</li>
-                <li>合作伙伴</li>
-                <li>联系我们</li>
-              </ul>
+            <div class="subMenu-container">
+              <div class="subMenu">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-triangle"></use>
+                </svg>
+                <ul>
+                  <li>机构简介</li>
+                  <li>信息公开</li>
+                  <li>合作伙伴</li>
+                  <li>联系我们</li>
+                </ul>
+              </div>
             </div>
           </li>
           <li class="nav-li">
             支持我们
-            <div>
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-triangle"></use>
-              </svg>
-              <ul>
-                <li>我要捐款</li>
-                <li>志愿报名</li>
-                <li>物资需求</li>
-                <li>招募启事</li>
-              </ul>
+            <div class="subMenu-container">
+              <div class="subMenu">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-triangle"></use>
+                </svg>
+                <ul>
+                  <li>我要捐款</li>
+                  <li>志愿报名</li>
+                  <li>物资需求</li>
+                  <li>招募启事</li>
+                </ul>
+              </div>
+
             </div>
           </li>
 
@@ -88,8 +101,47 @@
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
-  name: 'NavBar'
+  name: 'NavBar',
+  mounted () {
+    $('.nav-li').on('mouseover', function (e) {
+      let children = e.currentTarget.childNodes
+      for (let i = 0; i < children.length; i++) {
+        if (children[i].nodeName === 'DIV') {
+          for (let j = 0; j < children[i].childNodes.length; j++) {
+            if (children[i].childNodes[j].nodeName === 'DIV') {
+              $(children[i].childNodes[j]).addClass('active')
+            }
+          }
+        }
+      }
+    })
+    $('.nav-li').on('mouseout', function (e) {
+      let children = e.currentTarget.childNodes
+      for (let i = 0; i < children.length; i++) {
+        if (children[i].nodeName === 'DIV') {
+          for (let j = 0; j < children[i].childNodes.length; j++) {
+            if (children[i].childNodes[j].nodeName === 'DIV') {
+              $(children[i].childNodes[j]).removeClass('active')
+            }
+          }
+        }
+      }
+    })
+    if (window.scrollY > 0) {
+      $('#nav-bar-container').addClass('active')
+    }
+  },
+  methods: {
+    handleScroll: function (evt, el) {
+      if (window.scrollY > 0) {
+        $('#nav-bar-container').addClass('active')
+      } else {
+        $('#nav-bar-container').removeClass('active')
+      }
+    }
+  }
 }
 </script>
 
@@ -100,9 +152,18 @@ export default {
     clear:both;
   }
   #nav-bar-container{
+    transition: all .4s ease 0s;
+    background-color: #fff;
+    position: fixed;
+    top:50px;
+    left:calc(50% - 550px);
+    z-index: 111;
     overflow-y:visible;
+    margin: 0 auto;
+    height:80px;
+    width: 1100px;
     > #nav-bar{
-      width:85%;
+      transition: all .4s ease 0s;
       margin: 0 auto;
       justify-content: space-between;
       color:#546e7a;
@@ -110,9 +171,11 @@ export default {
       > #nav-bar-left{
         float: left;
         display: flex;
-        height: 79px;
+        height: 85px;
+        margin-left: 30px;
         > img{
-          height: 75px;
+          margin-top: 9px;
+          height: 65px;
         }
         > ul{
           margin-top: 45px;
@@ -123,15 +186,25 @@ export default {
             list-style-type:none;
             padding: 0 1.2rem;
             position: relative;
-            &:hover {
-              color:#FF9200;
-              > div{
-                display: flex;
+            /*border:1px solid red;*/
+            color:#FF9200;
+            > div.subMenu-container{
+              padding-top: 6px;
+              /*border:1px solid green;*/
+              > div.subMenu{
+                background-color: #fff;
+                padding: 16px;
+                /*display: none;*/
+                /*border:1px solid red;*/
                 position: absolute;
-                top: 35px;
+                top: 27px;
+                /*top:0;*/
                 left: 9px;
                 border-radius: 3px;
                 box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.16);
+                transition: .8s all;
+                visibility:hidden;
+                opacity: 0;
                 >svg{
                   position: absolute;
                   top:-10px;
@@ -151,30 +224,23 @@ export default {
                   }
                 }
               }
+
             }
-            > div{
-              position: absolute;
-              padding: 16px;
-              display: none;
-              > ul{
-                list-style: none;
-                > li{
-                }
+          }
+          > li.nav-li{
+            > div.subMenu-container{
+              > div.subMenu.active{
+                display: flex;
+                visibility: visible;
+                opacity: 1;
               }
             }
-            /*> div::before{
-              content: "";
-              font-family: fontawesome;
-              top: -26px;
-              font-size: 32px;
-              position: absolute;
-              left: 50px;
-              color: #fff;
-            }*/
           }
         }
       }
       > #nav-bar-right{
+        margin-right: 30px;
+
         float: right;
         margin-top: 39px;
         display: flex;
@@ -186,6 +252,7 @@ export default {
           }
         }
         > button{
+          outline: none;
           margin-left: 26px;
           font-size: 0.75rem;
           padding: 0.475rem 1.1rem;
@@ -201,6 +268,18 @@ export default {
           border: none;
         }
       }
+    }
+  }
+  #nav-bar-container.active{
+    left:0;
+    width:100%;
+    top:0px;
+    height:80px;
+    display: flex;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+    /*padding: 0 30px;*/
+    > #nav-bar{
+      width:calc(100% - 60px);
     }
   }
   @keyframes hvr-wobble-horizontal{5.56%{-webkit-transform:translateX(8px);transform:translateX(8px)}11.11%{-webkit-transform:translateX(-6px);transform:translateX(-6px)}16.67%{-webkit-transform:translateX(4px);transform:translateX(4px)}22.22%{-webkit-transform:translateX(-2px);transform:translateX(-2px)}27.75%{-webkit-transform:translateX(1px);transform:translateX(1px)}33.33%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(0);transform:translateX(0)}}
