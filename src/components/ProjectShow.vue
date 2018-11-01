@@ -42,6 +42,14 @@
         </div>
       </div>
     </main>
+    <div class="more">
+      <a href="">
+        更多动态&nbsp;
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-xiangxia"></use>
+        </svg>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -53,8 +61,9 @@ export default {
 
 <style scoped lang="scss">
   #ProjectShow{
-    box-sizing: border-box;
+    margin: 0 auto;
     width:1100px;
+    box-sizing: border-box;
     > header{
       > h1{
         font-size: 30px;
@@ -106,7 +115,7 @@ export default {
               border-color: #39bcd8;
               border-style: solid;
               border-width: 2px 2px 5px;
-              /*display: inline-block;*/
+              display: inline-block;
               padding: 1.2em 3em;
               text-decoration: none;
             }
@@ -138,6 +147,30 @@ export default {
             letter-spacing: .12em;
             text-decoration: none;
           }
+        }
+      }
+    }
+    .more{
+      display: flex;
+      justify-content: flex-end;
+      padding: 27px 18px;
+      color: #17468f;
+      transition: all .3s;
+      font-size: .9375rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      > a{
+        text-decoration: none;
+        position: relative;
+        &:hover svg{
+          right: -20px;
+        }
+        svg{
+          position: absolute;
+          width: .84em;
+          top: 3px;
+          right: -14px;
+          transition: right .3s;
         }
       }
     }

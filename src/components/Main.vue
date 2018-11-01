@@ -16,8 +16,6 @@ export default {
 
 <style scoped lang="scss">
   #main-wrapper{
-    margin: 0 auto;
-    /*background-color: red;*/
-    width:1100px;
+
   }
 </style>

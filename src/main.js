@@ -4,7 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import NavBar from './components/NavBar'
 import ImageSwiper from './components/ImageSwiper'
-import Main from './components/Main'
+import ProjectShow from './components/ProjectShow'
+import NewsDelivery from './components/NewsDelivery'
 import Footer from './components/Footer'
 import router from './router'
 import svg from './assets/js/svg'
@@ -29,12 +30,13 @@ Vue.directive('scroll', {
 new Vue({
   el: '#app',
   router,
-  components: {App, NavBar, ImageSwiper, Main, Footer},
+  components: {App, NavBar, ImageSwiper, ProjectShow, NewsDelivery, Footer},
   template: `
     <div>
       <NavBar/>
       <ImageSwiper/>
-      <Main/>
+      <ProjectShow/>
+      <NewsDelivery/>
       <Footer/>
     </div>`
 

@@ -3,10 +3,12 @@
     <swiper :options="swiperOption"  ref="mySwiper">
       <!-- 这部分放你要渲染的那些内容 -->
       <swiper-slide v-for="(item,index) in items" :key="index">
-        <div :class="item.class">
-          <img :src="item.src" alt="">
+        <div :class="item.class" :style="item.style">
+          <!--<img :src="item.src" alt="">-->
         </div>
       </swiper-slide>
+      <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div>
       <!-- 这是轮播的小圆点 -->
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -21,13 +23,45 @@ export default {
     swiper,
     swiperSlide
   },
-  data () {
+  data: function () {
     return {
       items: [
-        {src: 'https://i.loli.net/2018/10/31/5bd928f8aa1eb.jpeg', class: `swiper-slide blue-slide`},
-        {src: 'https://i.loli.net/2018/10/31/5bd928f8b1810.jpeg\n', class: `swiper-slide red-slide`},
-        {src: 'https://i.loli.net/2018/10/31/5bd928f8bd341.jpeg', class: `swiper-slide orange-slide`},
-        {src: 'https://i.loli.net/2018/10/31/5bd928f8bd356.jpeg', class: `swiper-slide blue-slide`}
+        {
+          src: 'https://i.loli.net/2018/11/01/5bdad6afa924a.jpg',
+          class: `swiper-slide blue-slide`,
+          style: {
+            'background-image': `url(https://i.loli.net/2018/11/01/5bdad6afa924a.jpg)`,
+            'background-position': 'center center',
+            'background-size': 'cover'
+          }
+        },
+        {
+          src: 'https://i.loli.net/2018/11/01/5bdad6afb4faf.jpg',
+          class: `swiper-slide red-slide`,
+          style: {
+            'background-image': `url(https://i.loli.net/2018/11/01/5bdad6afb4faf.jpg)`,
+            'background-position': 'center center',
+            'background-size': 'cover'
+          }
+        },
+        {
+          src: 'https://i.loli.net/2018/11/01/5bdad6afbbcaa.jpg',
+          class: `swiper-slide orange-slide`,
+          style: {
+            'background-image': `url(https://i.loli.net/2018/11/01/5bdad6afbbcaa.jpg)`,
+            'background-position': 'center center',
+            'background-size': 'cover'
+          }
+        },
+        {
+          src: 'https://i.loli.net/2018/11/01/5bdad6afce8d9.jpg',
+          class: `swiper-slide blue-slide`,
+          style: {
+            'background-image': `url(https://i.loli.net/2018/11/01/5bdad6afce8d9.jpg)`,
+            'background-position': 'center center',
+            'background-size': 'cover'
+          }
+        }
       ],
       swiperOption: {
         navigation: {// 使用前进后退按钮来控制Swiper切换
@@ -72,7 +106,7 @@ export default {
       width: 100%;
       img{
         width: 100%;
-        height:500px;
+        height:700px;
       }
     }
   }

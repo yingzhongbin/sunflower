@@ -167,7 +167,7 @@ export default {
       margin: 0 auto;
       justify-content: space-between;
       color:#546e7a;
-      font-size: 14px;
+      font-size: 16px;
       > #nav-bar-left{
         float: left;
         display: flex;
@@ -178,7 +178,7 @@ export default {
           height: 65px;
         }
         > ul{
-          margin-top: 45px;
+          margin-top: 35px;
           list-style-type:none;
           display: flex;
           align-items: center;
@@ -190,6 +190,7 @@ export default {
             color:#FF9200;
             > div.subMenu-container{
               padding-top: 6px;
+              font-size: 16px;
               /*border:1px solid green;*/
               > div.subMenu{
                 background-color: #fff;
@@ -215,7 +216,7 @@ export default {
                   > li{
                     color:black;
                     word-break: keep-all;
-                    font-size: 13px;
+                    font-size: 15px;
                     margin-bottom: 6px;
                   }
                   > li:last-child{
@@ -254,7 +255,7 @@ export default {
         > button{
           outline: none;
           margin-left: 26px;
-          font-size: 0.75rem;
+          font-size: 0.9rem;
           padding: 0.475rem 1.1rem;
           border-radius: 100px;
           background-color: #FF9200;
