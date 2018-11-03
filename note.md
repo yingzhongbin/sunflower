@@ -27,6 +27,6 @@ npm run build
 但建立后的文件需要一个服务器才能行
 所以在config/index.js中修改
 assetsPublicPath: '/'为
-assetsPublicPath: './'。（共两处）
+assetsPublicPath: './'。（build里的）
 
 

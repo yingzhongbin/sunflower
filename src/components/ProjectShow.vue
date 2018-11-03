@@ -98,8 +98,8 @@ export default {
           > div.mlr-container{
             margin-left: 40px;
             > div.meta{
-              font-size: $orange;
-              color: $orange;
+              font-size: 16px;
+              color: rgba(0, 0, 0, 0.6);
               font-weight: 600;
               margin-bottom: 1em;
             }
@@ -111,17 +111,18 @@ export default {
             > p{
               margin-bottom: 1.5em;
             }
-            > a{
+            > a.more{
               font-size: .9375rem;
               font-weight: 600;
               letter-spacing: .12em;
-              color: $yellow;
-              border-color: $yellow;
+              color: $orange;
+              border-color: $orange;
               border-style: solid;
               border-width: 2px 2px 5px;
               display: inline-block;
-              padding: 1.2em 3em;
+              padding: .6em 1.5em;
               text-decoration: none;
+              font-size: 17px;
             }
           }
         }
@@ -134,7 +135,7 @@ export default {
           padding: 36px 0 36px 36px;
           > div.meta{
             font-size: .9375rem;
-            color: $orange;
+            color: rgba(0, 0, 0, 0.6);
             font-weight: 600;
             margin-bottom: 1em;
           }
@@ -145,8 +146,8 @@ export default {
             margin-bottom: 1em;
             color:$red;
           }
-          > a{
-            color: $yellow;
+          > a.more{
+            color: $orange;
             font-size: .9375rem;
             font-weight: 600;
             letter-spacing: .12em;

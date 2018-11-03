@@ -94,7 +94,7 @@ export default {
             font-size: .9375rem;
             font-weight: 600;
             letter-spacing: .12em;
-
+            font-size: 17px;
           }
         }
         > .subtitle-news{

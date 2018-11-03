@@ -13,6 +13,7 @@ import svg from './assets/js/svg'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 // require styles
 import 'swiper/dist/css/swiper.css'
+import './assets/css/default.scss'
 Vue.use(VueAwesomeSwiper /* { default global options } */)
 Vue.config.productionTip = false
 /* eslint-disable no-new */

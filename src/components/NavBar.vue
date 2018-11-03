@@ -156,6 +156,7 @@ export default {
     clear:both;
   }
   #nav-bar-container{
+    min-width: 950px;
     transition: all .4s ease 0s;
     background-color: #fff;
     position: fixed;
