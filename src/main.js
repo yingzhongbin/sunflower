@@ -6,13 +6,13 @@ import NavBar from './components/NavBar'
 import ImageSwiper from './components/ImageSwiper'
 import ProjectShow from './components/ProjectShow'
 import NewsDelivery from './components/NewsDelivery'
+import Stores from './components/Stores'
 import Footer from './components/Footer'
 import router from './router'
 import svg from './assets/js/svg'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 // require styles
 import 'swiper/dist/css/swiper.css'
-
 Vue.use(VueAwesomeSwiper /* { default global options } */)
 Vue.config.productionTip = false
 /* eslint-disable no-new */
@@ -30,13 +30,14 @@ Vue.directive('scroll', {
 new Vue({
   el: '#app',
   router,
-  components: {App, NavBar, ImageSwiper, ProjectShow, NewsDelivery, Footer},
+  components: {App, NavBar, ImageSwiper, ProjectShow, NewsDelivery, Footer, Stores},
   template: `
     <div>
       <NavBar/>
       <ImageSwiper/>
       <ProjectShow/>
       <NewsDelivery/>
+      <Stores/>
       <Footer/>
     </div>`
 

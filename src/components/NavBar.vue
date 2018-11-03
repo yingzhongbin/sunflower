@@ -146,6 +146,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  $red: #c50d66;
+  $yellow: #eec60a;
+  $orange:#f07810;
+  $grey:#f5f4e8;
   .clearfix::after{
     content:'';
     display: block;
@@ -187,7 +191,7 @@ export default {
             padding: 0 1.2rem;
             position: relative;
             /*border:1px solid red;*/
-            color:#FF9200;
+            color:$orange;
             > div.subMenu-container{
               padding-top: 6px;
               font-size: 16px;
@@ -249,7 +253,7 @@ export default {
         > span:nth-child(2){
           margin: 0 1em;
           > &:hover {
-            color:#FF9200;
+            color:$orange;
           }
         }
         > button{
@@ -258,7 +262,7 @@ export default {
           font-size: 0.9rem;
           padding: 0.475rem 1.1rem;
           border-radius: 100px;
-          background-color: #FF9200;
+          background-color: $orange;
           color: white;
           transition: all .5s;
           animation-name:hvr-wobble-horizontal;

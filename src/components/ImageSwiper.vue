@@ -7,8 +7,8 @@
           <!--<img :src="item.src" alt="">-->
         </div>
       </swiper-slide>
-      <div class="swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button-next" slot="button-next"></div>
+      <div class="swiper-button-prev orange" slot="button-prev"></div>
+      <div class="swiper-button-next orange" slot="button-next"></div>
       <!-- 这是轮播的小圆点 -->
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -97,6 +97,22 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$red: #c50d66;
+$yellow: #eec60a;
+$orange:#f07810;
+$grey:#f5f4e8;
+/*.swiper-button-prev, .swiper-container-rtl .swiper-button-next.orange{*/
+  /*background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%…19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23f07810'%2F%3E%3C%2Fsvg%3E);*/
+/*}*/
+/*.swiper-button-next, .swiper-container-rtl .swiper-button-prev.orange{*/
+  /*background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%…2L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23f07810'%2F%3E%3C%2Fsvg%3E);*/
+/*}*/
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next.orange{
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23f07810'%2F%3E%3C%2Fsvg%3E");
+}
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev.orange{
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23f07810'%2F%3E%3C%2Fsvg%3E");
+}
 .swiper-container{
   width:100%;
   height:500px;
@@ -113,13 +129,13 @@ export default {
 }
 
 .blue-slide {
-  background: #4390EE;
+  background: $grey;
 }
 .red-slide {
-  background: #CA4040;
+  background: $grey;
 }
 .orange-slide {
-  background: #FF8604;
+  background: $grey;
 }
 .swiper-slide {
   /*line-height: 300px;*/

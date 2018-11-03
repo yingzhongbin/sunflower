@@ -60,6 +60,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  $red: #c50d66;
+  $yellow: #eec60a;
+  $orange:#f07810;
+  $grey:#f5f4e8;
   #ProjectShow{
     margin: 0 auto;
     width:1100px;
@@ -75,7 +79,7 @@ export default {
     }
     > main{
       display: flex;
-      border-bottom:1px solid #DEDDE2;
+      border-bottom:1px solid $grey;
       padding-bottom: 8px;
       #main-left{
         width:770px;
@@ -85,8 +89,8 @@ export default {
           display: flex;
           justify-content: space-between;
           padding: 54px 54px 54px 0;
-          border-top:1px solid #DEDDE2;
-          border-right:1px solid #DEDDE2;
+          border-top:1px solid $grey;
+          border-right:1px solid $grey;
 
           > img{
             width:285px;
@@ -94,14 +98,14 @@ export default {
           > div.mlr-container{
             margin-left: 40px;
             > div.meta{
-              font-size: .9375rem;
-              color: #7da5e2;
+              font-size: $orange;
+              color: $orange;
               font-weight: 600;
               margin-bottom: 1em;
             }
             > h3{
               font-size: 1.6875rem;
-              color: #17468f;
+              color: $red;
               margin-bottom: .25em;
             }
             > p{
@@ -111,8 +115,8 @@ export default {
               font-size: .9375rem;
               font-weight: 600;
               letter-spacing: .12em;
-              color: #39bcd8;
-              border-color: #39bcd8;
+              color: $yellow;
+              border-color: $yellow;
               border-style: solid;
               border-width: 2px 2px 5px;
               display: inline-block;
@@ -126,11 +130,11 @@ export default {
         width:330px;
         /*background-color: blue;*/
         > .mr-show{
-          border-top:1px solid #DEDDE2;
+          border-top:1px solid $grey;
           padding: 36px 0 36px 36px;
           > div.meta{
             font-size: .9375rem;
-            color: #7da5e2;
+            color: $orange;
             font-weight: 600;
             margin-bottom: 1em;
           }
@@ -139,9 +143,10 @@ export default {
             font-weight: 400;
             line-height: 1.3;
             margin-bottom: 1em;
+            color:$red;
           }
           > a{
-            color: #39bcd8;
+            color: $yellow;
             font-size: .9375rem;
             font-weight: 600;
             letter-spacing: .12em;
@@ -154,12 +159,12 @@ export default {
       display: flex;
       justify-content: flex-end;
       padding: 27px 18px;
-      color: #17468f;
       transition: all .3s;
       font-size: .9375rem;
       font-weight: 600;
       letter-spacing: .12em;
       > a{
+        color: $red;
         text-decoration: none;
         position: relative;
         &:hover svg{

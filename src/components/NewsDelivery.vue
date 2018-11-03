@@ -32,16 +32,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  $red: #c50d66;
+  $yellow: #eec60a;
+  $orange:#f07810;
+  $grey:#f5f4e8;
+  $wineRed:#dd7777;
+  $newsTitle:#F54EA2;
   #news{
     width:100%;
     min-height: 700px;
     /*background-color: #0F2D71;*/
     > #news-container{
+      color: $grey;
       display: flex;
-      border-top: 10px #D9E0ED solid;
+      border-top: 10px $grey solid;
       margin: 0 auto;
       width: 1100px;
-      background-color: #0F2D71;
+      background-color: $red;
       padding-top: 108px;
       min-height: 640px;
       > .news-img{
@@ -53,36 +60,37 @@ export default {
         img{}
       }
       > .news-lists{
-        background-color: rgb(23, 70, 143);
+        background-color: $wineRed;
         margin-right: 20px;
         margin-top: 27px;
+        margin-bottom: 83px;
         > .main-news{
           padding: 36px 0;
           margin-right: 70px;
           margin-left: 40px;
-          border-bottom: 1px solid #3B5BA1;
+          border-bottom: 1px solid $grey;
           > .meta{
             padding-top: 1em;
             font-size: .9375rem;
-            color: #7da5e2;
             font-weight: 600;
             margin-bottom: 1.4em;
           }
           > h3{
-            color: #fff;
+            /*color: #fff;*/
             cursor: pointer;
             font-size: 2rem;
             font-weight: 400;
             line-height: 1.2;
             margin-bottom: .35em;
+            color:white;
           }
           > p{
             margin-bottom: 1.2em;
-            color: #fff;
+            /*color: #fff;*/
             line-height: 1.8;
           }
           > .more{
-            color: #39bcd8;
+            color: $yellow;
             font-size: .9375rem;
             font-weight: 600;
             letter-spacing: .12em;
@@ -97,17 +105,18 @@ export default {
           > .subNews-content{
             width:50%;
             padding: 36px 0;
-            color: #fff;
+            /*color: #fff;*/
             &:last-child{
-              border-left: 1px solid #3B5BA1;
+              border-left: 1px solid $grey;
               padding-left: 35px;
             }
             > .subNews-title{
               font-size: 1.25rem;
               font-weight: 400;
+              color: white;
             }
             > .subNews-author{
-              color: #7da5e2;
+              color: $grey;
               font-weight: 600;
             }
           }
