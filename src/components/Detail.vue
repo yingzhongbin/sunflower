@@ -91,6 +91,7 @@ export default {
           align-items: flex-end;
           list-style: none;
           > li{
+            margin-bottom: .5em;
             color: rgba(0,0,0,.8);
             font-size: 16px;
 

@@ -1,37 +1,16 @@
 <template>
   <div id="card-container">
-    <!--<div class="card">-->
-      <!--<div class="title-img" :style="card.imgStyle"></div>-->
-      <!--<div class="card-symbol" :style="card.symbolStyle"></div>-->
-      <!--<div class="card-content">-->
-        <!--<div class="card-content-title">微店</div>-->
-        <!--<div class="card-content-text">微店太阳帆欢迎您！-->
-          <!--<div class="card-content-text-img" :style="card.contentStyle"></div>-->
-        <!--</div>-->
-        <!--<div class="more">了解更多</div>-->
-      <!--</div>-->
-    <!--</div>-->
-
-    <div class="card-detail">
-      <div class="card-detail-img" :style="cardDetail.imgStyle">
+    <div class="card-detail" v-for="(item,index) in cardDetail" :key="index">
+      <div class="card-detail-img" :style="[item.imgStyle,defaultImgStyle]">
       </div>
       <div class="card-detail-content">
-        <div class="card-detail-price">￥158.00</div>
+        <div class="card-detail-price">{{item.price}}</div>
         <div class="card-detail-title">
-          【预售】米菲勇气兔，两色可选，发货期：2017年7月-2018年1月（英子手术后开始制作，按照订单顺序发货）
+          {{item.title}}
         </div>
-        <div class="more">了解更多</div>
       </div>
-    </div>
-    <div class="card-detail">
-      <div class="card-detail-img" :style="cardDetail.imgStyle">
-      </div>
-      <div class="card-detail-content">
-        <div class="card-detail-price">￥158.00</div>
-        <div class="card-detail-title">
-          【预售】米菲勇气兔，两色可选，发货期：2017年7月-2018年1月（英子手术后开始制作，按照订单顺序发货）
-        </div>
-        <div class="more">了解更多</div>
+      <div class="more">
+        <a :href="item.aHref">了解更多</a>
       </div>
     </div>
 
@@ -41,32 +20,30 @@
 <script>
 export default {
   name: 'Cards',
-  data () {
+  data: function () {
     return {
-      card: {
-        imgStyle: {
-          'background-image': `url(https://i.loli.net/2018/11/01/5bdafbdd4f617.jpeg)`,
-          'background-position': 'center center',
-          'background-size': 'cover'
-        },
-        symbolStyle: {
-          'background-image': `url(https://i.loli.net/2018/11/01/5bdafbdcefc2e.jpg)`,
-          'background-position': 'center center',
-          'background-size': 'cover'
-        },
-        contentStyle: {
-          'background-image': `url(https://i.loli.net/2018/11/01/5bdafbdc791af.png)`,
-          'background-position': 'center center',
-          'background-size': 'cover'
-        }
+      defaultImgStyle: {
+        'background-position': 'center center',
+        'background-size': 'cover'
       },
-      cardDetail: {
-        imgStyle: {
-          'background-image': `url(https://i.loli.net/2018/11/02/5bdbc7a777d5e.jpg)`,
-          'background-position': 'center center',
-          'background-size': 'cover'
+      cardDetail: [
+        {
+          imgStyle: {
+            'background-image': `url(https://i.loli.net/2018/11/02/5bdbc7a777d5e.jpg)`
+          },
+          price: '￥158.00',
+          title: '【预售】米菲勇气兔，两色可选，发货期：2017年7月-2018年1月（英子手术后开始制作，按照订单顺序发货）',
+          aHref: ''
+        },
+        {
+          imgStyle: {
+            'background-image': `url(https://si.geilicdn.com/bj-pc-1140044929-1492743752031-992945835_700_700.jpg.webp?w=750&h=750&cp=1)`
+          },
+          price: '￥18.00',
+          title: '【瓷心巧手】瓷娃娃手工，永不凋谢的玫瑰',
+          aHref: 'https://weidian.com/item.html?itemID=2083927330&wfr=c_qfriendh5&ifr=itemdetail&spider_token=9490&spider=seller.zx-shopdetail.tabbar.47&state=H5WXshareOld&distributorId=1145966003&share_relation=4ec13dceec910548_1145966003_1'
         }
-      }
+      ]
     }
   }
 }
@@ -82,60 +59,6 @@ export default {
     margin: 0 auto;
     justify-content: space-around;
     background-color: $red;
-    > .card{
-      border-radius: 20px;
-      position: relative;
-      top:-90px;
-      width:440px;
-      overflow: hidden;
-      /*border: 1px solid black;*/
-      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-      > .title-img{
-        width: 100%;
-        height:250px;
-        /*border: 1px solid red;*/
-      }
-      > .card-symbol{
-        position: absolute;
-        top: 220px;
-        left: 55px;
-        width: 32px;
-        height: 32px;
-        border-radius: 40px;
-        /*border: 1px solid red;*/
-        padding: 15px 14px 14px;
-      }
-      > .card-content{
-        padding: 37px 54px 0px;
-        min-height:367px;
-        display: flex;
-        flex-direction: column;
-        > .card-content-title{
-          font-size: 1.75rem;
-          color: #242445;
-          font-weight: 300;
-          margin-bottom: 20px;
-        }
-        > .card-content-text{
-          line-height: 1.6;
-          flex-grow: 1;
-          > .card-content-text-img{
-            width:120px;
-            height: 120px;
-          }
-        }
-        > .more{
-          margin-bottom: 52px;
-          border-color: $yellow;
-          border-style: solid;
-          border-width: 2px 2px 5px;
-          display: inline;
-          padding: 1.2em 3em;
-          color: $yellow;
-          width:64px;
-        }
-      }
-    }
     > .card-detail{
       box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
       min-height:700px;
@@ -155,6 +78,8 @@ export default {
         > .card-detail-content{
           position: absolute;
           top: 400px;
+          width:93%;
+          min-height:400px;
         }
       }
       > .card-detail-img{
@@ -166,6 +91,8 @@ export default {
         transition: all 200ms ease-in-out;
       }
       > .card-detail-content{
+        width:93%;
+        min-height:400px;
         background-color: #fff;
         /*border:2px blue solid;*/
         transition: all 200ms ease-in-out;
@@ -178,16 +105,19 @@ export default {
         }
         > .card-detail-title{
         }
-        > .more{
-          margin-top: 12px;
-
-          border-color: $yellow;
-          border-style: solid;
-          border-width: 2px 2px 5px;
-          /*display: inline;*/
-          padding: 1.2em 3em;
-          color: $yellow;
-          width:64px;
+      }
+      > .more{
+        position: absolute;
+        top: 600px;
+        left: 20px;
+        border-color: $orange;
+        border-style: solid;
+        border-width: 2px 2px 5px;
+        padding: 1.2em 3em;
+        color: $yellow;
+        width:64px;
+        > a{
+          color: $orange;
         }
       }
 

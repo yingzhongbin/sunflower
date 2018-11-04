@@ -29,4 +29,18 @@ npm run build
 assetsPublicPath: '/'为
 assetsPublicPath: './'。（build里的）
 
+设置保证imgContainer的整体位置不缩小
+```angularjs
+> div.imgContainer{
+  width:285px;
+  height:285px;
+  flex-shrink: 0;
+
+}
+> div.mlr-container{
+  flex-shrink: 1;
+}
+
+```
+
 

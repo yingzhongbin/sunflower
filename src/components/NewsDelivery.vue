@@ -5,19 +5,21 @@
       </div>
       <div class="news-lists">
         <div class="main-news">
-          <div class="meta">2018 10.11 | 病房服务 </div>
-          <h3>我是标题</h3>
-          <p>我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容</p>
-          <div class="more">阅读更多</div>
+          <div class="meta">2018 10.31 | 新闻速递 </div>
+          <h3>武清区委统战部牵线搭桥，太阳语走进武清区残联</h3>
+          <p>10月30日，武清区委统战部王术力副部长牵线搭桥，并亲自和太阳语发起人魏瑞红、理事张景懿一起走进武清区残联拜访...</p>
+          <div class="more"><a href="https://mp.weixin.qq.com/s?__biz=MjM5MDUwNDgzMQ==&mid=2649943033&idx=1&sn=41bb905defc3aa640532897a81a4215e&chksm=be4589e9893200ffb4b5384526376566846d8021d2d345f0a92ed181b4dac64b62a9b384a641&mpshare=1&scene=23&srcid=1104R6zvmQ1cxw1CoBAJusnf%23rd">阅读更多</a></div>
         </div>
         <div class="subtitle-news">
           <div class="subNews-content">
-            <div class="subNews-title">我是标题</div>
-            <div class="subNews-author">我是作者</div>
+            <div class="subNews-title">他们说，我们准备好了 -- 记天狮学院瓷娃娃志愿者见面培训会</div>
+            <div class="more"><a href="https://mp.weixin.qq.com/s?__biz=MjM5MDUwNDgzMQ==&mid=2649943033&idx=1&sn=41bb905defc3aa640532897a81a4215e&chksm=be4589e9893200ffb4b5384526376566846d8021d2d345f0a92ed181b4dac64b62a9b384a641&mpshare=1&scene=23&srcid=1104R6zvmQ1cxw1CoBAJusnf%23rd">阅读更多</a></div>
+
           </div>
           <div class="subNews-content">
-            <div class="subNews-title">我是标题</div>
-            <div class="subNews-author">我是作者</div>
+            <div class="subNews-title">我们来了@河北工业大学 -- 瓷娃娃进校园系列</div>
+            <div class="more"><a href="https://mp.weixin.qq.com/s?__biz=MjM5MDUwNDgzMQ==&mid=2649943033&idx=1&sn=41bb905defc3aa640532897a81a4215e&chksm=be4589e9893200ffb4b5384526376566846d8021d2d345f0a92ed181b4dac64b62a9b384a641&mpshare=1&scene=23&srcid=1104R6zvmQ1cxw1CoBAJusnf%23rd">阅读更多</a></div>
+
           </div>
         </div>
       </div>
@@ -53,9 +55,11 @@ export default {
       min-height: 640px;
       > .news-img{
         margin-left: 20px;
-        width:410px;
+        width:480px;
         height: 530px;
-        background: url("../assets/img/5.jpg") center center;
+        background: url("https://i.loli.net/2018/11/04/5bde9e8f08e73.jpg");
+        background-position: center center;
+        background-size: cover;
         border:10px solid white;
         img{}
       }
@@ -114,10 +118,14 @@ export default {
               font-size: 1.25rem;
               font-weight: 400;
               color: white;
+              margin-bottom: 10px;
             }
-            > .subNews-author{
-              color: $grey;
+            > .more{
+              color: $yellow;
+              font-size: .9375rem;
               font-weight: 600;
+              letter-spacing: .12em;
+              font-size: 17px;
             }
           }
         }

@@ -2,12 +2,16 @@
     <div id="stores">
       <h2>爱心售卖</h2>
       <div id="stores-container">
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-taobao1"></use>
-        </svg>
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-weidian"></use>
-        </svg>
+        <a href="https://weidian.com/?userid=1140044929">
+          <svg class="icon" aria-hidden="true">
+           <use xlink:href="#icon-taobao1"></use>
+          </svg>
+        </a>
+        <a href="http://m.rijni.top/h.3QtFFnj">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-weidian"></use>
+          </svg>
+        </a>
       </div>
 
     </div>
@@ -35,12 +39,15 @@ export default {
       justify-content: center;
       align-items: center;
       margin-top: 25px;
-      > svg{
-        width: 200px;
-        height: 80px;
-      }
-      > svg:last-child{
-        height: 70px;
+      >a{
+        color:black;
+        > svg{
+          width: 200px;
+          height: 80px;
+        }
+        > svg:last-child{
+          height: 70px;
+        }
       }
     }
   }
