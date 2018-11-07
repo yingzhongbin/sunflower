@@ -44,6 +44,10 @@ export default {
         > svg{
           width: 200px;
           height: 80px;
+          transition: .5s all;
+          &:hover{
+            transform: scale(1.1);
+          }
         }
         > svg:last-child{
           height: 70px;

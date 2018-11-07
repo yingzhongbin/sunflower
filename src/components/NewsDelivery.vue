@@ -87,6 +87,9 @@ export default {
             line-height: 1.2;
             margin-bottom: .35em;
             color:white;
+            &:hover{
+              text-decoration: underline;
+            }
           }
           > p{
             margin-bottom: 1.2em;
@@ -99,6 +102,9 @@ export default {
             font-weight: 600;
             letter-spacing: .12em;
             font-size: 17px;
+            &:hover{
+              text-decoration: underline;
+            }
           }
         }
         > .subtitle-news{
@@ -119,6 +125,9 @@ export default {
               font-weight: 400;
               color: white;
               margin-bottom: 10px;
+              &:hover{
+                text-decoration: underline;
+              }
             }
             > .more{
               color: $yellow;
@@ -126,6 +135,9 @@ export default {
               font-weight: 600;
               letter-spacing: .12em;
               font-size: 17px;
+              &:hover{
+                text-decoration: underline;
+              }
             }
           }
         }

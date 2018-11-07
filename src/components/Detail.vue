@@ -70,7 +70,7 @@ export default {
             margin-bottom: .5em;
             font-size: 16px;
             > a{
-              color: rgba(0,0,0,.8);
+              color: rgba(0,0,0,.6);
               text-decoration: none;
               transition: all .3s;
               &:hover{
@@ -92,7 +92,7 @@ export default {
           list-style: none;
           > li{
             margin-bottom: .5em;
-            color: rgba(0,0,0,.8);
+            color: rgba(0,0,0,.7);
             font-size: 16px;
 
           }

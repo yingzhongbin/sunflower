@@ -146,6 +146,10 @@ export default {
                 font-size: 1.6875rem;
                 color: $red;
                 margin-bottom: .25em;
+                &:hover{
+                  /*color:blue;*/
+                  text-decoration: underline;
+                }
               }
               > p{
                 margin-bottom: 1.5em;
@@ -162,6 +166,9 @@ export default {
                 padding: .6em 1.5em;
                 text-decoration: none;
                 font-size: 17px;
+                &:hover{
+                  text-decoration: underline;
+                }
               }
             }
           }
@@ -186,6 +193,9 @@ export default {
               line-height: 1.3;
               margin-bottom: 1em;
               color:$red;
+              &:hover{
+                text-decoration: underline;
+              }
             }
             > a.more{
               color: $orange;
@@ -193,6 +203,9 @@ export default {
               font-weight: 600;
               letter-spacing: .12em;
               text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
             }
           }
         }

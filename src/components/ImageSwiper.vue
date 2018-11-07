@@ -48,7 +48,7 @@ export default {
         },
         {
           style: {
-            'background-image': `url(https://i.loli.net/2018/11/01/5bdad6afce8d9.jpg)`
+            'background-image': `url(https://i.loli.net/2018/11/01/5bdad6afce8d9.jpg)`,
           }
         }
       ],

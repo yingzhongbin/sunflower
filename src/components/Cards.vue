@@ -68,34 +68,20 @@ export default {
       position: relative;
       top:-90px;
       overflow: hidden;
-      &:hover{
-        > .card-detail-img{
-          position: absolute;
-          transform: scale(1.2);
-          height:440*1.2px;
-          width:440*1.2px;
-        }
-        > .card-detail-content{
-          position: absolute;
-          top: 400px;
-          width:93%;
-          min-height:400px;
-        }
-      }
       > .card-detail-img{
         position: absolute;
         top:0px;
         left: 0px;
         height:440px;
         width:100%;
-        transition: all 200ms ease-in-out;
+        transition: all .5s ease-in-out;
       }
       > .card-detail-content{
         width:93%;
         min-height:400px;
         background-color: #fff;
         /*border:2px blue solid;*/
-        transition: all 200ms ease-in-out;
+        transition: all .5s ease-in-out;
         position: absolute;
         top: 440px;
         padding: 10px 20px;
@@ -119,8 +105,24 @@ export default {
         > a{
           color: $orange;
         }
+        &:hover{
+          text-decoration: underline;
+        }
       }
-
+      &:hover{
+        > .card-detail-img{
+          position: absolute;
+          transform: scale(1.1);
+          height:440*1.2px;
+          width:440*1.2px;
+        }
+        > .card-detail-content{
+          position: absolute;
+          top: 400px;
+          width:93%;
+          min-height:400px;
+        }
+      }
     }
   }
 </style>
