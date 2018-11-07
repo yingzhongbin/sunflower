@@ -177,7 +177,7 @@ export default {
     width: 90%;
     min-width:900px;
     > #nav-bar{
-      transition: all .4s ease 0s;
+      transition: width .4s ease 0s;
       margin: 0 auto;
       color:#546e7a;
       font-size: 16px;
