@@ -97,11 +97,13 @@ export default {
             line-height: 1.8;
           }
           > .more{
-            color: $yellow;
             font-size: .9375rem;
             font-weight: 600;
             letter-spacing: .12em;
             font-size: 17px;
+            > a{
+              color: $yellow;
+            }
             &:hover{
               text-decoration: underline;
             }
@@ -114,11 +116,12 @@ export default {
           margin-left: 40px;
           > .subNews-content{
             width:50%;
-            padding: 36px 0;
+            padding: 36px 26px 36px 0px;
             /*color: #fff;*/
             &:last-child{
               border-left: 1px solid $grey;
               padding-left: 35px;
+              padding-right: 0px;
             }
             > .subNews-title{
               font-size: 1.25rem;
@@ -130,11 +133,13 @@ export default {
               }
             }
             > .more{
-              color: $yellow;
               font-size: .9375rem;
               font-weight: 600;
               letter-spacing: .12em;
               font-size: 17px;
+              > a{
+                color: $yellow;
+              }
               &:hover{
                 text-decoration: underline;
               }

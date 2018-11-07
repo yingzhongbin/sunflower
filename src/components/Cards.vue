@@ -37,7 +37,7 @@ export default {
         },
         {
           imgStyle: {
-            'background-image': `url(https://si.geilicdn.com/bj-pc-1140044929-1492743752031-992945835_700_700.jpg.webp?w=750&h=750&cp=1)`
+            'background-image': `url(https://si.geilicdn.com/bj-pc-1140044929-1492743752031-992945835_700_700.jpg)`
           },
           price: '￥18.00',
           title: '【瓷心巧手】瓷娃娃手工，永不凋谢的玫瑰',
@@ -63,6 +63,7 @@ export default {
       box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
       min-height:700px;
       border-radius: 20px;
+      transform: rotate(0deg);
       background-color: #fff;
       width:440px;
       position: relative;

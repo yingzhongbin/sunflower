@@ -43,4 +43,9 @@ assetsPublicPath: './'。（两处）
 
 ```
 
+设置字体
+font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+
+在safari下hover后的border-radius会短暂消失
+设置`transform: rotate(0deg)`即可
 

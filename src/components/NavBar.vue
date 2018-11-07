@@ -1,6 +1,6 @@
 <template>
   <div id="nav-bar-container" v-scroll="handleScroll">
-    <div id="nav-bar" class="clearfix">
+    <div id="nav-bar">
       <div id="nav-bar-left">
         <img src="../assets/logo.png" alt="">
         <ul>
@@ -164,7 +164,8 @@ export default {
   #nav-bar-container{
     /*min-width: 950px;*/
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-    transition: all .4s ease 0s;
+    transition: top .4s ease 0s,left .4s ease 0s,width .4s ease 0s;
+    -webkit-transition: top .4s ease 0s,left .4s ease 0s,width .4s ease 0s;
     background-color: #fff;
     position: fixed;
     top:50px;
@@ -178,9 +179,10 @@ export default {
     > #nav-bar{
       transition: all .4s ease 0s;
       margin: 0 auto;
-      justify-content: space-between;
       color:#546e7a;
       font-size: 16px;
+      display: flex;
+      justify-content: space-around;
       > #nav-bar-left{
         float: left;
         display: flex;
@@ -201,6 +203,7 @@ export default {
             position: relative;
             /*border:1px solid red;*/
             color:$orange;
+            width: 65px;
             > div.subMenu-container{
               padding-top: 6px;
               font-size: 16px;
@@ -273,9 +276,9 @@ export default {
         }
       }
       > #nav-bar-right{
+        margin-bottom: 5px;
         margin-right: 30px;
-
-        float: right;
+        white-space: nowrap;
         margin-top: 39px;
         display: flex;
         align-items: center;
