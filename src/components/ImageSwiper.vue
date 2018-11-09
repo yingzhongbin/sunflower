@@ -1,5 +1,5 @@
 <template>
-  <div  style="height: 700px">
+  <div style="height: 700px">
     <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
       <swiper-slide v-for="(item,index) in items" :key="index">
         <div class='swiper-slide'

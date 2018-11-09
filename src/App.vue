@@ -1,11 +1,9 @@
 <template>
-  <div id="app">
+  <div id="app" class="hidden">
     <!--<router-view/>-->
     <Loading v-show="!loaded"/>
-    <div class="hidden" id="main">
-      <ImageSwiper/>
-      <Main v-show="loaded" v-cloak/>
-    </div>
+    <ImageSwiper/>
+    <Main v-show="loaded" v-cloak/>
   </div>
 </template>
 
@@ -32,7 +30,7 @@ export default {
       setTimeout(() => {
         this.loaded = true
         window.scrollTo(0, 0)
-        $('#main').removeClass('hidden')
+        $('#app').removeClass('hidden')
       }, 1000)
     })
   },
@@ -43,8 +41,9 @@ export default {
 </script>
 
 <style>
-  .hidden{
-    display: none;
+  #app.hidden{
+    height:100vh;
+    overflow: hidden;
   }
   *{
     margin: 0;
