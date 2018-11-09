@@ -2,13 +2,15 @@
   <div id="app">
     <!--<router-view/>-->
     <Loading v-show="!loaded"/>
-    <ImageSwiper/>
-    <Main v-show="loaded" v-cloak/>
+    <div class="hidden" id="main">
+      <ImageSwiper/>
+      <Main v-show="loaded" v-cloak/>
+    </div>
   </div>
 </template>
 
 <script>
-
+import $ from 'jquery'
 import Loading from './components/Loading'
 import ImageSwiper from './components/ImageSwiper'
 import Main from './components/Main'
@@ -30,8 +32,8 @@ export default {
       setTimeout(() => {
         this.loaded = true
         window.scrollTo(0, 0)
+        $('#main').removeClass('hidden')
       }, 1000)
-      console.log(3)
     })
   },
   mounted () {
@@ -41,6 +43,9 @@ export default {
 </script>
 
 <style>
+  .hidden{
+    display: none;
+  }
   *{
     margin: 0;
     padding: 0;
