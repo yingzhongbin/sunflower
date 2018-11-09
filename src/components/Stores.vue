@@ -19,12 +19,17 @@
 
 <script>
 export default {
-  name: 'Stores'
+  name: 'Stores',
+  mounted () {
+    console.log('stores')
+    this.$root.bus.$emit('stores', true)
+  }
 }
 </script>
 
 <style scoped lang="scss">
   #stores{
+    min-width:1200px;
     display: flex;
     flex-direction: column;
     /*justify-content: center;*/

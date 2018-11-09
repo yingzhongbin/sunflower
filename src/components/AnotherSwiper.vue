@@ -1,6 +1,7 @@
 <template>
-  <div  style="height: 700px">
-    <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
+  <div>
+    <swiper :options="swiperOption"  ref="mySwiper">
+      <!-- 这部分放你要渲染的那些内容 -->
       <swiper-slide v-for="(item,index) in items" :key="index">
         <div class='swiper-slide'
              :style="[item.style,defaultImgStyle]"
@@ -11,30 +12,22 @@
       </swiper-slide>
       <div class="swiper-button-prev orange" slot="button-prev"></div>
       <div class="swiper-button-next orange" slot="button-next"></div>
-    </swiper>
-    <!-- swiper2 Thumbs -->
-    <swiper :options="swiperOptionThumbs" class="gallery-thumbs" ref="swiperThumbs">
-      <swiper-slide v-for="(item,index) in items" :key="index">
-        <div class='swiper-slide'
-             :style="[item.style,defaultImgStyle]"
-             :swiper-animate-effect="items.animateEffect"
-             :swiper-animate-duration="item.animateDuration">
-        </div>
-        <div class="mask"></div>
-      </swiper-slide>
+      <!-- 这是轮播的小圆点 -->
+      <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
 </template>
 
 <script>
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import $ from 'jquery'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
+  name: 'ImageSwiper',
   components: {
     swiper,
     swiperSlide
   },
-  data () {
+  data: function () {
     return {
       defaultImgStyle: {
         'background-position': 'center center',
@@ -70,38 +63,34 @@ export default {
           animateDuration: '0.5s'
         }
       ],
-      swiperOptionTop: {
-        spaceBetween: 10,
-        loop: true,
+      swiperOption: {
+        navigation: {// 使用前进后退按钮来控制Swiper切换
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
         autoplay: {// 用户操作swiper之后自动切换不会停止，每次都会重新启动autoplay。
           disableOnInteraction: false
         }, // 可选选项，自动滑动
-        preventClicks: false,
-        loopedSlides: 5, // looped slides should be the same
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
+        // loop: true, // 可循环
+        preventClicks: false, // a链接跳转
+        pagination: {
+          el: '.swiper-pagination',
+          dynamicBullets: true,
+          dynamicMainBullets: 1,
+          clickable: true// 点击分页器的指示点分页器会控制Swiper切换
         }
-      },
-      swiperOptionThumbs: {
-        spaceBetween: 10,
-        slidesPerView: 4,
-        touchRatio: 0.2,
-        loop: true,
-        loopedSlides: 5, // looped slides should be the same
-        slideToClickedSlide: true
       }
     }
   },
+  // 定义这个sweiper对象
+  computed: {
+    swiper () {
+      return this.$refs.mySwiper.swiper
+    }
+  },
   mounted () {
-    console.log('imageswiper')
-    this.$root.bus.$emit('imageswiper', true)
-    this.$nextTick(() => {
-      const swiperTop = this.$refs.swiperTop.swiper
-      const swiperThumbs = this.$refs.swiperThumbs.swiper
-      swiperTop.controller.control = swiperThumbs
-      swiperThumbs.controller.control = swiperTop
-    })
+    // 这边就可以使用swiper这个对象去使用swiper官网中的那些方法
+    this.swiper.slideTo(0, 0, false)
     $('.swiper-slide').on('mouseenter', function (e) {
       $('.swiper-slide').addClass('active')
     })
@@ -110,26 +99,10 @@ export default {
     })
   }
 }
+
 </script>
 
-<style lang="scss" scoped>
-  .gallery-top {
-    height: 80%!important;
-    width: 100%;
-  }
-  .gallery-thumbs {
-    height: 20%!important;
-    box-sizing: border-box;
-    padding: 10px 0;
-  }
-  .gallery-thumbs .swiperSlide {
-    width: 25%;
-    height: 100%;
-    opacity: 0.4;
-  }
-  .gallery-thumbs .swiperSlide-active {
-    opacity: 1;
-  }
+<style scoped lang="scss">
   $red: #c50d66;
   $yellow: #eec60a;
   $orange:#f07810;
@@ -153,6 +126,16 @@ export default {
         }
       }
     }
+  }
+
+  .blue-slide {
+    background: $grey;
+  }
+  .red-slide {
+    background: $grey;
+  }
+  .orange-slide {
+    background: $grey;
   }
   .swiper-slide {
     color: #fff;

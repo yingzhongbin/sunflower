@@ -49,3 +49,10 @@ font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans G
 在safari下hover后的border-radius会短暂消失
 设置`transform: rotate(0deg)`即可
 
+慢慢进入需要设置opacity和visibility
+transition: .8s opacity,.8s visibility;
+
+```angularjs
+
+```
+

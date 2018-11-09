@@ -86,6 +86,10 @@ export default {
         }
       ]
     }
+  },
+  mounted () {
+    console.log('ProjectShow')
+    this.$root.bus.$emit('projectshow', true)
   }
 }
 </script>
@@ -128,7 +132,7 @@ export default {
               width:285px;
               height:285px;
               flex-shrink: 0;
-              animation: .8s all;
+              transition: opacity.6s;
               &:hover{
                 opacity: .8;
               }
@@ -180,7 +184,13 @@ export default {
         > .mr-show{
           border-top:1px solid $grey;
           padding: 36px 16px 36px 36px;
+          height:189px;
+          display: flex;
           > a{
+            /*background-color: blue;*/
+            display: flex;
+            flex-direction: column;
+            height: 100%;
             > div.meta{
               font-size: .9375rem;
               color: rgba(0, 0, 0, 0.6);
@@ -193,6 +203,8 @@ export default {
               line-height: 1.3;
               margin-bottom: 1em;
               color:$red;
+              flex-grow: 1;
+
               &:hover{
                 text-decoration: underline;
               }
@@ -203,6 +215,9 @@ export default {
               font-weight: 600;
               letter-spacing: .12em;
               text-decoration: none;
+              /*flex-shrink: 0;*/
+              width:70px;
+              align-self: flex-end;
               &:hover{
                 text-decoration: underline;
               }
@@ -211,7 +226,7 @@ export default {
         }
       }
     }
-    .more{
+    > .more{
       display: flex;
       justify-content: flex-end;
       padding: 27px 18px;

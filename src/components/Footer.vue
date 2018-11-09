@@ -14,6 +14,10 @@ export default {
   components: {
     Cards,
     Detail
+  },
+  mounted () {
+    console.log('footer')
+    this.$root.bus.$emit('footer', true)
   }
 }
 </script>

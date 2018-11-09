@@ -2,17 +2,13 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import NavBar from './components/NavBar'
-import ImageSwiper from './components/ImageSwiper'
-import ProjectShow from './components/ProjectShow'
-import NewsDelivery from './components/NewsDelivery'
-import Stores from './components/Stores'
-import Footer from './components/Footer'
+
 import router from './router'
 import svg from './assets/js/svg'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 // require styles
 import 'swiper/dist/css/swiper.css'
+import './assets/scss/color.scss'
 import './assets/css/default.scss'
 Vue.use(VueAwesomeSwiper /* { default global options } */)
 Vue.config.productionTip = false
@@ -31,15 +27,11 @@ Vue.directive('scroll', {
 new Vue({
   el: '#app',
   router,
-  components: {App, NavBar, ImageSwiper, ProjectShow, NewsDelivery, Footer, Stores},
+  components: {App},
   template: `
-    <div>
-      <NavBar/>
-      <ImageSwiper/>
-      <ProjectShow/>
-      <NewsDelivery/>
-      <Stores/>
-      <Footer/>
-    </div>`
-
+    <App/>
+  `,
+  data: {
+    bus: new Vue()
+  }
 })

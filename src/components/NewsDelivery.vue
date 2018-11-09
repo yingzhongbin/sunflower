@@ -29,7 +29,11 @@
 
 <script>
 export default {
-  name: 'NewsDelivery'
+  name: 'NewsDelivery',
+  mounted () {
+    console.log('NewsDelivery')
+    this.$root.bus.$emit('newsdelivery', true)
+  }
 }
 </script>
 
@@ -101,6 +105,7 @@ export default {
             font-weight: 600;
             letter-spacing: .12em;
             font-size: 17px;
+            width:85px;
             > a{
               color: $yellow;
             }
@@ -117,6 +122,8 @@ export default {
           > .subNews-content{
             width:50%;
             padding: 36px 26px 36px 0px;
+            display: flex;
+            flex-direction: column;
             /*color: #fff;*/
             &:last-child{
               border-left: 1px solid $grey;
@@ -128,15 +135,17 @@ export default {
               font-weight: 400;
               color: white;
               margin-bottom: 10px;
+              flex-grow: 1;
               &:hover{
                 text-decoration: underline;
               }
             }
-            > .more{
-              font-size: .9375rem;
+            > div.more{
               font-weight: 600;
               letter-spacing: .12em;
               font-size: 17px;
+              width:80px;
+              align-self: flex-end;
               > a{
                 color: $yellow;
               }

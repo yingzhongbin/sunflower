@@ -102,7 +102,12 @@
 import $ from 'jquery'
 export default {
   name: 'NavBar',
+  created () {
+    this.$root.bus.$emit('xxx', 'xxx')
+  },
   mounted () {
+    this.$root.bus.$emit('navbar', true)
+    console.log('NavBar')
     $('.nav-li').on('mouseover', function (e) {
       let children = e.currentTarget.childNodes
       for (let i = 0; i < children.length; i++) {
@@ -130,7 +135,7 @@ export default {
     if (window.scrollY > 0) {
       $('#nav-bar-container').addClass('active')
     }
-    $('.subMenu li').on('mouseover', function (e) {
+    $('.subMenu li').on('mouseover ', function (e) {
       let li = e.currentTarget
       $(li).addClass('active')
     })
@@ -162,10 +167,9 @@ export default {
     clear:both;
   }
   #nav-bar-container{
-    /*min-width: 950px;*/
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    display: flex;
     transition: top .4s ease 0s,left .4s ease 0s,width .4s ease 0s;
-    -webkit-transition: top .4s ease 0s,left .4s ease 0s,width .4s ease 0s;
     background-color: #fff;
     position: fixed;
     top:50px;
@@ -176,70 +180,72 @@ export default {
     height:80px;
     width: 90%;
     min-width:900px;
-    > #nav-bar{
-      transition: width .4s ease 0s;
-      margin: 0 auto;
-      color:#546e7a;
+    > #nav-bar {
+      color: #546e7a;
+      width:100%;
+      transition: width .8s;
       font-size: 16px;
       display: flex;
-      justify-content: space-around;
-      > #nav-bar-left{
+      justify-content: space-between;
+      margin: 0 auto;
+      > #nav-bar-left {
+        margin-right: 30px;
         float: left;
         display: flex;
         height: 85px;
         margin-left: 30px;
-        > img{
+        > img {
           margin-top: 9px;
           height: 65px;
         }
-        > ul{
-          margin-top: 35px;
-          list-style-type:none;
+        > ul {
+          margin-top: 26px;
+          list-style-type: none;
           display: flex;
           align-items: center;
-          > li.nav-li{
-            list-style-type:none;
+          > li.nav-li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
             padding: 0 1.2rem;
             position: relative;
-            /*border:1px solid red;*/
-            color:$orange;
+            color: $orange;
             width: 65px;
-            > div.subMenu-container{
+            font-weight: 500;
+            transition: width .8s;
+            > div.subMenu-container {
               padding-top: 6px;
               font-size: 16px;
-              /*border:1px solid green;*/
-              > div.subMenu{
+              > div.subMenu {
+                display: flex;
+                transition: top .8s,visibility .8s,opacity .8s;
                 background-color: #fff;
                 padding: 16px;
-                /*display: none;*/
-                /*border:1px solid red;*/
                 position: absolute;
                 top: 22px;
-                /*top:0;*/
                 left: 9px;
                 border-radius: 3px;
-                box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.16);
-                transition: .8s all;
-                visibility:hidden;
+                box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.16);
+                visibility: hidden;
                 opacity: 0;
-                >svg{
+                > svg {
                   position: absolute;
-                  top:-10px;
+                  top: -10px;
                 }
-                > ul{
+                > ul {
                   list-style: none;
                   padding-inline-start: 0px;
-                  > li{
+                  > li {
                     word-break: keep-all;
                     font-size: 15px;
                     margin-bottom: 6px;
                     position: relative;
-                    a{
-                      color:black;
+                    a {
+                      color: black;
                     }
-                    &:after{
-                      content:'';
-                      /*animation: .3s lineSlideBack;*/
+                    &:after {
+                      content: '';
                       background-color: $orange;
                       height: 1px;
                       position: absolute;
@@ -247,48 +253,44 @@ export default {
                       bottom: -3px;
                     }
                   }
-                  > li.active{
-                    &:after{
-                      content:'';
+                  > li.active {
+                    &:after {
+                      content: '';
                       animation: .8s lineSlide;
                     }
                   }
-                  > li:last-child{
+                  > li:last-child {
                     margin-bottom: 0px;
-
                   }
                 }
               }
-
             }
           }
-          > li.nav-li{
-            > div.subMenu-container{
-              > div.subMenu.active{
+          > li.nav-li {
+            > div.subMenu-container {
+              > div.subMenu.active {
                 top: 27px;
-                display: flex;
                 visibility: visible;
                 opacity: 1;
-
               }
             }
           }
         }
       }
-      > #nav-bar-right{
+      > #nav-bar-right {
         margin-bottom: 5px;
         margin-right: 30px;
         white-space: nowrap;
         margin-top: 39px;
         display: flex;
         align-items: center;
-        > span:nth-child(2){
+        > span:nth-child(2) {
           margin: 0 1em;
           > &:hover {
-            color:$orange;
+            color: $orange;
           }
         }
-        > button{
+        > button {
           outline: none;
           margin-left: 26px;
           font-size: 0.9rem;
@@ -296,8 +298,7 @@ export default {
           border-radius: 100px;
           background-color: $orange;
           color: white;
-          transition: all .5s;
-          animation-name:hvr-wobble-horizontal;
+          animation-name: hvr-wobble-horizontal;
           animation-duration: 3s;
           animation-timing-function: ease-in-out;
           animation-iteration-count: infinite;
@@ -311,12 +312,15 @@ export default {
     left:0;
     width:100%;
     top:0px;
-    height:80px;
-    display: flex;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
-    /*padding: 0 30px;*/
     > #nav-bar{
       width:calc(100% - 60px);
+      > #nav-bar-left{
+        >ul{
+          > li.nav-li{
+            width:78px;
+          }
+        }
+      }
     }
   }
   @keyframes lineSlide{
